@@ -1,0 +1,10 @@
+/home/bw81/Documents/code/C#/GoFish/bin/Debug/netcoreapp2.0/GoFish.deps.json
+/home/bw81/Documents/code/C#/GoFish/bin/Debug/netcoreapp2.0/GoFish.runtimeconfig.json
+/home/bw81/Documents/code/C#/GoFish/bin/Debug/netcoreapp2.0/GoFish.runtimeconfig.dev.json
+/home/bw81/Documents/code/C#/GoFish/bin/Debug/netcoreapp2.0/GoFish.dll
+/home/bw81/Documents/code/C#/GoFish/bin/Debug/netcoreapp2.0/GoFish.pdb
+/home/bw81/Documents/code/C#/GoFish/obj/Debug/netcoreapp2.0/GoFish.csproj.CoreCompileInputs.cache
+/home/bw81/Documents/code/C#/GoFish/obj/Debug/netcoreapp2.0/GoFish.AssemblyInfoInputs.cache
+/home/bw81/Documents/code/C#/GoFish/obj/Debug/netcoreapp2.0/GoFish.AssemblyInfo.cs
+/home/bw81/Documents/code/C#/GoFish/obj/Debug/netcoreapp2.0/GoFish.dll
+/home/bw81/Documents/code/C#/GoFish/obj/Debug/netcoreapp2.0/GoFish.pdb
