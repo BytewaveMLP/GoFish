@@ -34,20 +34,22 @@ namespace GoFish {
 			Card possible;
 
 			List<Card> possibleGuesses = this.LastUserGuesses.Intersect(this.Hand.Cards).ToList();
+			List<Card> distinctHeldCards = this.Hand.Cards.Distinct().ToList();
 
 			if (possibleGuesses.Count == 0) {
-				List<Card> distinctHeldCards = this.Hand.Cards.Distinct().ToList();
 				possible = distinctHeldCards[(this.rand.Next(0, distinctHeldCards.Count))];
 			} else {
 				possible = possibleGuesses[this.rand.Next(possibleGuesses.Count)];
 			}
 
 			/// Don't want to guess the same thing twice.
-			if (this.lastGuesses.Contains(possible)) {
-				return this.GetGuess();
+			while (this.lastGuesses.Contains(possible)) {
+				possible = distinctHeldCards[(this.rand.Next(0, distinctHeldCards.Count))];
 			}
 
 			this.lastGuesses.Enqueue(possible);
+
+			Console.WriteLine(String.Join(", ", this.lastGuesses));
 
 			return possible;
 		}
