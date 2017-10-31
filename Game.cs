@@ -37,6 +37,8 @@ namespace GoFish {
 						Console.WriteLine($"{youOrI} get another guess!");
 					}
 
+					List<Card> previousBooks = pl.Hand.Books;
+
 					Console.WriteLine($"Your hand: {human.Hand}");
 
 					Card guess = pl.GetGuess();
@@ -65,7 +67,16 @@ namespace GoFish {
 						pl.ReceiveCards(cards);
 						playersSwapped = false;
 					}
+
+					List<Card> newBooks = pl.Hand.Books.Intersect(previousBooks).ToList();
+
+					if (newBooks.Count > 0) {
+						Console.WriteLine($"{youOrI} made a book of {newBooks[0]}s!");
+					}
 				}
+
+				Console.WriteLine($"Your books: {human.Hand.Books.Count}");
+				Console.WriteLine($"My books: {ai.Hand.Books.Count}");
 
 				if (human.Hand.Books.Count > ai.Hand.Books.Count) {
 					Console.WriteLine("You win!");
