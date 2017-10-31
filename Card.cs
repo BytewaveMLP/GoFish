@@ -42,11 +42,9 @@ namespace GoFish {
 		/// Compares this Card to another one by value
 		/// </summary>
 		/// <param name="that">The Card to compare against</param>
-		/// <returns>-1 if this &lt; that, 1 if this &gt; that, 0 if this == that</returns>
+		/// <returns>&lt; 0 if this &lt; that, &gt; 0 if this &gt; that, 0 if this == that</returns>
 		public int CompareTo(Card that) {
-			if (this.Value < that.Value) return -1;
-			if (this.Value > that.Value) return 1;
-			return 0;
+			return this.Value - that.Value;
 		}
 
 		/// <summary>
