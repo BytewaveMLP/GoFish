@@ -43,13 +43,11 @@ namespace GoFish {
 			}
 
 			/// Don't want to guess the same thing twice.
-			while (this.lastGuesses.Contains(possible)) {
+			while (this.lastGuesses.Contains(possible) && distinctHeldCards.Count > this.lastGuesses.Count) {
 				possible = distinctHeldCards[(this.rand.Next(0, distinctHeldCards.Count))];
 			}
 
 			this.lastGuesses.Enqueue(possible);
-
-			Console.WriteLine(String.Join(", ", this.lastGuesses));
 
 			return possible;
 		}

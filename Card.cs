@@ -1,7 +1,7 @@
 using System;
 
 namespace GoFish {
-	public class Card : IComparable<Card> {
+	public class Card : IComparable<Card>, IEquatable<Card> {
 		/// <summary>
 		/// The card's "name," or textual representation
 		/// </summary>
@@ -58,6 +58,13 @@ namespace GoFish {
 
 		public override string ToString() {
 			return this.Name;
+		}
+
+		public override int GetHashCode() {
+			int hashName = this.Name == null ? 0 : this.Name.GetHashCode();
+			int hashValue = this.Value == 0 ? 0 : this.Value.GetHashCode();
+
+			return hashName ^ hashValue;
 		}
 	}
 }

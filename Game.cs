@@ -37,7 +37,7 @@ namespace GoFish {
 						Console.WriteLine($"{youOrI} get another guess!");
 					}
 
-					List<Card> previousBooks = pl.Hand.Books;
+					List<Card> previousBooks = pl.Hand.Books.ToList();
 
 					Console.WriteLine($"Your hand: {human.Hand}");
 
@@ -68,8 +68,8 @@ namespace GoFish {
 						playersSwapped = false;
 					}
 
-					List<Card> newBooks = pl.Hand.Books.Intersect(previousBooks).ToList();
-
+					List<Card> newBooks = pl.Hand.Books.Except(previousBooks).ToList();
+					
 					if (newBooks.Count > 0) {
 						Console.WriteLine($"{youOrI} made a book of {newBooks[0]}s!");
 					}
